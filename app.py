@@ -68,7 +68,7 @@ if page == "Home":
             with st.container(border=True):
                 st.markdown(f"#### {info['icon']} {name}")
                 st.write(info["description"])
-                st.caption(f"{info['level']} pathway")
+                st.caption(f"{info.get('level', 'Basic')} pathway")
                 if st.button("Explore subject", key=f"home_{name}", use_container_width=True):
                     st.session_state["selected_subject"] = name
                     st.session_state["requested_page"] = "Learning Library"
